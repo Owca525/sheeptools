@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "sheeptools",
+	"version": "${version}",
+	"name": "SheepTools",
+	"description": "This is Mod for fun",
+	"authors": [
+		"Owca525"
+	],
+	"contact": {
+		"homepage": "https://github.com/Owca525/sheeptools",
+		"sources": "https://github.com/Owca525/sheeptools"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/sheeptools/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.owcadev.tools.SheepTools"
+		]
+	},
+	"mixins": [
+		"sheeptools.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
