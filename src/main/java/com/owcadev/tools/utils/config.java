@@ -18,6 +18,7 @@ public class config {
 
     public boolean OverWriteCompatible = false;
     public boolean IgnoreExpense = false;
+    public boolean DragonDropEgg = false;
 
     public static config load() {
         config config = new config();
@@ -54,6 +55,12 @@ public class config {
                                 Boolean.toString(config.IgnoreExpense)
                         )
                 );
+                config.DragonDropEgg = Boolean.parseBoolean(
+                        properties.getProperty(
+                                "DragonDropEgg",
+                                Boolean.toString(config.DragonDropEgg)
+                        )
+                );
             }
 
             config.save();
@@ -73,6 +80,8 @@ public class config {
                 "OverWriteCompatible", Boolean.toString(OverWriteCompatible));
         properties.setProperty(
                 "IgnoreExpense", Boolean.toString(IgnoreExpense));
+        properties.setProperty(
+                "DragonDropEgg", Boolean.toString(DragonDropEgg));
 
         properties.setProperty(
                 "MaxbeaconRange", Double.toString(MaxbeaconRange));
