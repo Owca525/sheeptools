@@ -3,6 +3,7 @@ package com.owcadev.tools.utils;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Properties;
@@ -70,6 +71,27 @@ public class config {
             throw new RuntimeException(
                     "Failed Load Config of sheeptools (sheeptools.ini)", e);
         }
+    }
+
+    public void ChangeConfig(String name, String variable) throws NoSuchFieldException, IllegalAccessException, IOException {
+        Field field = this.getClass().getField(name);
+
+        Object new_variable;
+
+        if (field.getType() == boolean.class) {
+            new_variable = Boolean.parseBoolean(variable);
+        } else if (field.getType() == int.class) {
+            new_variable = Integer.parseInt(variable);
+        } else if (field.getType() == double.class) {
+            new_variable = Double.parseDouble(variable);
+        } else if (field.getType() == String.class) {
+            new_variable = variable;
+        } else {
+            throw new IllegalArgumentException("UNUPORTED VARIABLE");
+        }
+
+        field.set(this, new_variable);
+        this.save();
     }
 
     public void save() throws IOException {

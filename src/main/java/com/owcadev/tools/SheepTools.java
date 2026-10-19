@@ -19,6 +19,8 @@ public class SheepTools implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("Initialize SheepTools");
 		SheepConfig = config.load();
+
+		new commands().InitialCommands();
 	}
 
 	public static Identifier id(String path) {

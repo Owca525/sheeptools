@@ -21,7 +21,8 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenu {
             at = @At("STORE"),
             name = "compatible")
     private static boolean isCompatible(boolean compatible) {
-        return SheepConfig.OverWriteCompatible;
+        if (SheepConfig.OverWriteCompatible) return true;
+        return compatible;
     }
 
     // Change Max Enchange level Allow
