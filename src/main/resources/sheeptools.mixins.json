@@ -1,19 +1,20 @@
 {
-	"required": true,
-	"package": "com.owcadev.tools.mixin",
-	"compatibilityLevel": "JAVA_25",
-	"mixins": [
-		"AnvilMenuMixin",
-		"BeaconBlockEntityMixin",
-		"EnderDragonFightMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
-	},
-	"client": [
-		"client.AnvilScreenMixin"
+  "required": true,
+  "package": "com.owcadev.tools.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "AnvilMenuMixin",
+    "BeaconBlockEntityMixin",
+    "EnderDragonFightMixin",
+    "ServerStatuSpoof"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "client.AnvilScreenMixin"
 	]
 }

@@ -20,6 +20,7 @@ public class config {
     public boolean OverWriteCompatible = false;
     public boolean IgnoreExpense = false;
     public boolean DragonDropEgg = false;
+    public boolean SpoofPlayerCount = false;
 
     public static config load() {
         config config = new config();
@@ -60,6 +61,13 @@ public class config {
                         properties.getProperty(
                                 "DragonDropEgg",
                                 Boolean.toString(config.DragonDropEgg)
+                        )
+                );
+
+                config.SpoofPlayerCount = Boolean.parseBoolean(
+                        properties.getProperty(
+                                "SpoofPlayerCount",
+                                Boolean.toString(config.SpoofPlayerCount)
                         )
                 );
             }
@@ -104,6 +112,8 @@ public class config {
                 "IgnoreExpense", Boolean.toString(IgnoreExpense));
         properties.setProperty(
                 "DragonDropEgg", Boolean.toString(DragonDropEgg));
+        properties.setProperty(
+                "SpoofPlayerCount", Boolean.toString(SpoofPlayerCount));
 
         properties.setProperty(
                 "MaxbeaconRange", Double.toString(MaxbeaconRange));
